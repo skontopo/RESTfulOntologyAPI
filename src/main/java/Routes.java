@@ -2,12 +2,14 @@ import static spark.Spark.*;
 
 public class Routes {
     public Routes () {
-        /*get("/hello", (req, res) -> {
-            return "Hello World";
-        });*/
+        QueryEngine qe = new QueryEngine();
+
+        get("/employee", (request, response) -> {
+            return qe.query(request.queryParams("name"));
+        });
 
         /*
-            Examples
+            Examples - for more see https://sparkjava.com/documentation#routes
          */
         /*get("/", (request, response) -> {
             // Show something
@@ -18,17 +20,5 @@ public class Routes {
             // Create something
             return "OK";
         });*/
-
-        /*get("/hello/:name", (request, response) -> {
-            return "Hello " + request.params(":name");
-        });*/
-
-        QueryEngine qe = new QueryEngine();
-
-        get("/employee", (request, response) -> {
-            return qe.query(request.queryParams("name"));
-        });
-
-
     }
 }

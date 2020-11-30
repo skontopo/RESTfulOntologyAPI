@@ -3,7 +3,7 @@ import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 import java.util.Iterator;
 
 /**
- * Created by Isai B. Cicourel
+ * Created by Isai B. Cicourel - see https://www.codementor.io/@isaib.cicourel/sparql-query-using-endpoints-101-du10884g8
  */
 public class QueryEngine {
 
@@ -20,7 +20,7 @@ public class QueryEngine {
         ((QueryEngineHTTP)qexec).addParam("timeout", "10000");
 
         // Execute Query
-        String result = "";
+        String result = ""; // The result is a long string but could be anything else, like e.g. an ArrayList of objects
         ResultSet rs = qexec.execSelect();
         while (rs.hasNext()) {
             // Get Result
@@ -40,6 +40,7 @@ public class QueryEngine {
         return result;
     }
 
+    // Submit a query with a given parameter
     public String query (String name) {
         // SPARQL Query
         String szQuery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
@@ -51,8 +52,8 @@ public class QueryEngine {
                 "    FILTER regex(?n, \"" + name + "\") .\n" +
                 "}";
 
-        //String szEndpoint = "http://dbpedia.org/sparql"; //DBPedia Endpoint
-        String szEndpoint = "http://192.168.1.3:7200/repositories/de4a";
+        //String szEndpoint = "http://dbpedia.org/sparql"; //DBpedia Endpoint
+        String szEndpoint = "http://192.168.1.3:7200/repositories/de4a"; //Local triplestore
 
         // Query the endpoint
         return queryEndpoint(szQuery, szEndpoint);
