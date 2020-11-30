@@ -1,0 +1,61 @@
+# baseURI: http://example.org/employees
+# prefix: ex
+
+@prefix ex: <http://example.org/employees#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/employees>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ex:AdminEmployee
+  rdf:type owl:Class ;
+  rdfs:label "Admin employee" ;
+  rdfs:subClassOf ex:Employee ;
+.
+ex:Employee
+  rdf:type owl:Class ;
+  rdfs:label "Employee" ;
+  rdfs:subClassOf owl:Thing ;
+.
+ex:WorkerEmployee
+  rdf:type owl:Class ;
+  rdfs:label "Worker employee" ;
+  rdfs:subClassOf ex:Employee ;
+.
+ex:hasName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ex:Employee ;
+  rdfs:label "has name" ;
+  rdfs:range xsd:string ;
+.
+ex:hasPosition
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ex:AdminEmployee ;
+  rdfs:label "has position" ;
+  rdfs:range xsd:string ;
+.
+ex:hasSupervisor
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ex:WorkerEmployee ;
+  rdfs:label "has supervisor" ;
+  rdfs:range ex:AdminEmployee ;
+.
+ex:jacknicholson
+  rdf:type ex:WorkerEmployee ;
+  ex:hasName "Jack Nicholson" ;
+  ex:hasSupervisor ex:johnsmith ;
+.
+ex:johnsmith
+  rdf:type ex:AdminEmployee ;
+  ex:hasName "John Smith" ;
+  ex:hasPosition "Supervisor" ;
+.
+ex:randybrown
+  rdf:type ex:WorkerEmployee ;
+  ex:hasName "Randy Brown" ;
+  ex:hasSupervisor ex:johnsmith ;
+.
