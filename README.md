@@ -16,3 +16,8 @@ The diagram below illustrates the key components in the current implementation:
 * **Query Engine**: Based on [Apache Jena](https://jena.apache.org/).
 * **Triplestore**: Can be any RDF triplestore, like e.g. [Ontotext's GraphDB](https://www.ontotext.com/products/graphdb/), exposing a SPARQL endpoint. 
 * **Ontology**: A `.ttl` or `.owl` ontology. Sample ontology is available in folder `src\main\resources`.
+
+
+## Usage
+
+Run `Main.java` in order to start the server on the defined port. By default Spark runs on port `4567`, but the code manually sets the port to `8080`.
