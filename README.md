@@ -7,7 +7,9 @@ This repository contains sample code demonstrating the creation of a RESTful API
 
 The diagram below illustrates the key components in the current implementation:
 
-<img align="center" src="/src/main/resources/RESTfulOntologyAPI.png">
+<p align="center">
+  <img align="center" src="/src/main/resources/RESTfulOntologyAPI.png">
+</p>
 
 
 * **RESTful API implementation**: Based on [Spark](https://sparkjava.com/);
