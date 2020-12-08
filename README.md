@@ -21,3 +21,5 @@ The diagram below illustrates the key components in the current implementation:
 ## Usage
 
 Run `Main.java` in order to start the server on the defined port. By default Spark runs on port `4567`, but the code manually sets the port to `8080`.
+
+See `Routes.java` for the defined routes and submit a suitable request to the respective endpoint.
