@@ -12,10 +12,10 @@ The diagram below illustrates the key components in the current implementation:
 </p>
 
 
-* **RESTful API implementation**: Based on [Spark](https://sparkjava.com/).
-* **Query Engine**: Based on [Apache Jena](https://jena.apache.org/).
-* **Triplestore**: Can be any RDF triplestore, like e.g. [Ontotext's GraphDB](https://www.ontotext.com/products/graphdb/), exposing a SPARQL endpoint. 
-* **Ontology**: A `.ttl` or `.owl` ontology. Sample ontology is available in folder `src\main\resources`.
+* **RESTful API implementation**: Based on [Spark](https://sparkjava.com/), it starts a RESTful server accepting requests at the specified endpoints.
+* **Query Engine**: Based on [Apache Jena](https://jena.apache.org/), it converts the request to a (parameterized) SPARQL query.
+* **Triplestore**: Used for storing and accessing the ontology by exposing a SPARQL endpoint. Can be any RDF triplestore, like e.g. [Ontotext's GraphDB](https://www.ontotext.com/products/graphdb/). 
+* **Ontology**: A `.ttl` or `.owl` ontology, containing schema and data. Sample ontology is available in folder `src\main\resources`.
 
 
 ## Usage
